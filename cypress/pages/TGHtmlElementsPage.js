@@ -9,6 +9,14 @@ class TGHtmlElementsPage extends TGBasePage {
         return cy.get('.is-block')
     }
 
+    getFirstDropdown(){
+        return cy.get('#company_dropdown1')
+    }
+
+    getSecondDropdown(){
+        return cy.get('#company_dropdown2')
+    }
+
     clickButtonByText(buttonName){
         this.getButtons().contains(buttonName).click()
     }

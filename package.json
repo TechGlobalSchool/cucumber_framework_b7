@@ -17,6 +17,6 @@
     "ts-node": "^10.9.1"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/e2e/step-definitions/*.js"
+    "stepDefinitions": "cypress/e2e/step-definitions/**/*.js"
   }
 }
