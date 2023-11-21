@@ -1,4 +1,4 @@
-const { Given, When } = require('@badeball/cypress-cucumber-preprocessor')
+const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 const TGHtmlElementsPage = require('../../pages/TGHtmlElementsPage')
 const TGDynamicTablesPage = require('../../pages/TGDynamicTablesPage')
 
@@ -7,6 +7,14 @@ const tgDynamicTablesPage = new TGDynamicTablesPage()
 
 Given('user navigates to {string}', (url) => {
     cy.visit(url)
+})
+
+Then('user should see {string} in the URL', (url) => {
+    cy.url().should('include', url)
+})
+
+Then('user should see {string} in the title', (title) => {
+    cy.title().should('include', title)
 })
 
 When('user click on the {string} button', (button) => {
