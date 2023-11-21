@@ -21,17 +21,6 @@ Then('the URL should contain {string}', (url) => {
 })
 
 
-When('user click on the {string} button', (button) => {
-    switch (button) {
-        case 'Register':
-        case 'Sign in':
-            tgHtmlElementsPage.clickButtonByText(button)
-            break
-        default:
-    }
-})
-
-
 Then('the text under it should be {string}', (message) => {
     tgHtmlElementsPage.getButtonMessage().should('have.text', message)
 })

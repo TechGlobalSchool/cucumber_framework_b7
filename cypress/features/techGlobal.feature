@@ -45,3 +45,20 @@ Feature: Interaction with the TechGlobal Training Frontend
         When user select the "Apple" and "Tesla" checkboxes
         Then both "Apple" and "Tesla" checkboxes should be checked
         And the "Microsoft" checkbox remains unchecked
+
+    Scenario: Validate dynamic tables pop-up window
+        Given user navigates to 'https://techglobal-training.com/frontend'
+        When user click on the 'Project - Dynamic Tables' card
+        Then user should see the 'Project - Dynamic Tables' page heading
+        When user click on the 'ADD PRODUCT' button
+        Then user should see Add New Product pop-up
+        When user click on the 'CLOSE' button
+        Then user should not see Add New Product pop-up
+
+    Scenario: Validate Login Form
+        Given user navigates to 'https://techglobal-training.com/frontend'
+        When user click on the 'Project - Login Function' card
+        Then user should see the "Project - Login Function" page heading
+        When user enter username as "TechGlobal" and password as "Test1234"
+        And user click Login Button
+        Then user should see a "You are logged in" message
