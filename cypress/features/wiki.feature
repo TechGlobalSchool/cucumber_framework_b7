@@ -1,8 +1,19 @@
 Feature: Wiki search functionality
 
-    Scenario: Validate wiki search
+    Background:
         Given user navigates to "https://www.wikipedia.org/"
-        When user search for "Tesla" on Wikipedia
-        Then user should see "Tesla" in the title
-        And user should see "Tesla" in the URL
-        And user should see "Tesla" in the first heading
+
+    Scenario Outline: Validate wiki search
+        When user search for "<input>" on Wikipedia
+        Then user should see "<input>" in the title
+        And user should see "<input>" in the URL
+        And user should see "<input>" in the first heading
+        Examples:
+            | input        |
+            | Jeff Bezos   |
+            | Elon Musk    |
+            | Barack Obama |
+
+    Scenario: Validate Wikipedia main languages
+        Then user should see below languages around the logo
+            | English | Español | Русский | 日本語 | Deutsch | Français | Italiano | 中文 | العربية | Português |

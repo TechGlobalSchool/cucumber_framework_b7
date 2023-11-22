@@ -10,7 +10,15 @@ Given('user navigates to {string}', (url) => {
 })
 
 Then('user should see {string} in the URL', (url) => {
-    cy.url().should('include', url)
+    // Elon Musk
+    // "Elon Musk".split(' ')
+
+    //["Elon", "Musk"]
+
+    for(const word of url.split(' ')){
+        cy.url().should('include', word)
+    }
+    
 })
 
 Then('user should see {string} in the title', (title) => {
