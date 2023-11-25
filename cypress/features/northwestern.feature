@@ -1,6 +1,7 @@
+@Regression
 Feature: Northwestern Test
 
-
+    @Northwestern
     Scenario: Northwestern Navbar
         Given user navigates to "https://www.northwestern.edu/"
         Then user should see below navbar items

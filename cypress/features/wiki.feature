@@ -1,8 +1,10 @@
+@Regression
 Feature: Wiki search functionality
 
     Background:
         Given user navigates to "https://www.wikipedia.org/"
 
+    @Wiki
     Scenario Outline: Validate wiki search
         When user search for "<input>" on Wikipedia
         Then user should see "<input>" in the title
@@ -14,6 +16,8 @@ Feature: Wiki search functionality
             | Elon Musk    |
             | Barack Obama |
 
+
+    @Wiki
     Scenario: Validate Wikipedia main languages
         Then user should see below languages around the logo
-            | English | Español | Русский | 日本語 | Deutsch | Français | Italiano | 中文 | العربية | Português |
+            | Englishhh | Español | Русский | 日本語 | Deutsch | Français | Italiano | 中文 | العربية | Português |

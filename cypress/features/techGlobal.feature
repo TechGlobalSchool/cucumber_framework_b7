@@ -1,9 +1,10 @@
+@Regression
 Feature: Interaction with the TechGlobal Training Frontend
 
     Background:
         Given user navigates to 'https://techglobal-training.com/frontend'
 
-    @HtmlElements
+    @HtmlElements @Smoke
     Scenario: Validate HTML Elements card, Register and Sign In Buttons
         When user click on the 'Html Elements' card
         Then user should see the 'Html Elements' page heading
@@ -23,7 +24,7 @@ Feature: Interaction with the TechGlobal Training Frontend
         Then "Apple" should be the selected option in the first dropdown
         And "Microsoft" should be the selected option in the second dropdown
 
-    @HtmlElements
+    @HtmlElements @Smoke
     Scenario: Validate HTML Elements card, Interact with text inputs
         When user click on the 'Html Elements' card
         Then user should see the 'Html Elements' page heading
@@ -33,7 +34,7 @@ Feature: Interaction with the TechGlobal Training Frontend
         Then the first text input field should contain "test input"
         And the second text input field should contain "another test input"
 
-    @HtmmlElements
+    @HtmlElements
     Scenario: Validate HTML Elements card, Toggle checkboxes and verify the state
         When user click on the 'Html Elements' card
         Then user should see the 'Html Elements' page heading
@@ -45,6 +46,7 @@ Feature: Interaction with the TechGlobal Training Frontend
         Then both "Apple" and "Tesla" checkboxes should be checked
         And the "Microsoft" checkbox remains unchecked
 
+    @popup
     Scenario: Validate dynamic tables pop-up window
         When user click on the 'Project - Dynamic Tables' card
         Then user should see the 'Project - Dynamic Tables' page heading
